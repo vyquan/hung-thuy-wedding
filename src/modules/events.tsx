@@ -4,7 +4,7 @@ const Events = () => {
   const events = [
     {
       title: "TIỆC CƯỚI NHÀ TRAI",
-      img: "/images/hungthuy/HIE_9858.jpg",
+      img: "/images/hungthuy/HIE_9858-min.jpg",
       hour: "Vào hồi 16 giờ 00 phút",
       date: "Thứ Sáu, ngày 12 tháng 01 năm 2024",
       lunarDate: "Tức ngày 02 tháng 12 năm Quý Mão",
@@ -14,7 +14,7 @@ const Events = () => {
     },
     {
       title: "TIỆC CƯỚI NHÀ GÁI",
-      img: "/images/hungthuy/HIE_9737 bat+khung.jpg",
+      img: "/images/hungthuy/HIE_9737 bat+khung-min.jpg",
       hour: "Vào hồi 10 giờ 30 phút",
       date: "Thứ Sáu, ngày 12 tháng 01 năm 2024",
       lunarDate: "Tức ngày 02 tháng 12 năm Quý Mão",
@@ -29,7 +29,7 @@ const Events = () => {
       <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mt-8">
         {events.map((event) => (
           <div
-            className="p-4 flex flex-col items-center text-gray-700 bg-white shadow-md bg-clip-border border rounded-xl w-full xs:w-96"
+            className="p-4 flex flex-col items-center text-gray-700 bg-white shadow-md bg-clip-border border rounded-xl w-full md:w-96"
             key={event.img}
           >
             <h4 className="text-center text-xl">{event.title}</h4>
