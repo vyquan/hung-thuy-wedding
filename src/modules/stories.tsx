@@ -21,12 +21,12 @@ const Stories = () => {
           </p>
         </div>
         <div className="w-full md:w-1/2">
-          <img src="/images/hungthuy/HIE_0401.jpg" alt="Ảnh chú rể" />
+          <img src="/images/hungthuy/HIE_0401-min.jpg" alt="Ảnh chú rể" />
         </div>
       </div>
       <div className="flex flex-col md:flex-row mt-8 gap-8 items-center text-black px-4">
         <div className="w-full md:w-1/2">
-          <img src="/images/hungthuy/HIE_0057.jpg" alt="Ảnh cô dâu" />
+          <img src="/images/hungthuy/HIE_0057-min.jpg" alt="Ảnh cô dâu" />
         </div>
         <div className="md:w-1/2 text-left">
           <h3 className="font-parfumerieScriptPro text-4xl md:text-6xl tracking-wider">Hoàng Thuỳ</h3>
