@@ -12,7 +12,7 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        banner: "url('/images/hungthuy/ht-banner-crop.jpg')",
+        banner: "url('/images/hungthuy/ht-banner-crop_optimized.jpg')",
         countdown: "url('/images/effects/bg-countdown.jpg')",
       },
       fontFamily: {
