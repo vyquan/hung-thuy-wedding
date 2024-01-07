@@ -3,20 +3,20 @@ import { Button, Image } from "antd";
 const Album = () => {
   const images = [
     "/images/hungthuy/HIE_0003=60x90-min.jpg",
-    "/images/hungthuy/HIE_0041 bat-min.jpg",
+    "/images/hungthuy/HIE_0041-bat-min.jpg",
     "/images/hungthuy/HIE_0057-min.jpg",
-    "/images/hungthuy/HIE_0063 bat+khung-min.jpg",
+    "/images/hungthuy/HIE_0063-bat+khung-min.jpg",
     "/images/hungthuy/HIE_0137-min.jpg",
-    "/images/hungthuy/HIE_0360 bat+khung-min.jpg",
+    "/images/hungthuy/HIE_0360-bat+khung-min.jpg",
     "/images/hungthuy/HIE_0399-min.jpg",
     "/images/hungthuy/HIE_0401-min.jpg",
-    "/images/hungthuy/HIE_9737 bat+khung-min.jpg",
+    "/images/hungthuy/HIE_9737-bat+khung-min.jpg",
     "/images/hungthuy/HIE_9858-min.jpg",
     "/images/hungthuy/HIE_9889-min.jpg",
     "/images/hungthuy/HIE_9892-min.jpg",
-    "/images/hungthuy/HIE_9935 bat-min.jpg",
+    "/images/hungthuy/HIE_9935-bat-min.jpg",
     "/images/hungthuy/HIE_9982=60x90-min.jpg",
-    "/images/hungthuy/ht-banner-min.jpg",
+    // "/images/hungthuy/ht-banner-min.jpg",
   ];
   return (
     <section className="w-full h-auto container mx-auto text-black text-center py-8">

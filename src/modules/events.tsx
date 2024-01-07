@@ -14,7 +14,7 @@ const Events = () => {
     },
     {
       title: "TIỆC CƯỚI NHÀ GÁI",
-      img: "/images/hungthuy/HIE_9737 bat+khung-min.jpg",
+      img: "/images/hungthuy/HIE_9737-bat+khung-min.jpg",
       hour: "Vào hồi 10 giờ 30 phút",
       date: "Thứ Sáu, ngày 12 tháng 01 năm 2024",
       lunarDate: "Tức ngày 02 tháng 12 năm Quý Mão",
