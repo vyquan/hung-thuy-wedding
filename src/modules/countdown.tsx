@@ -1,49 +1,58 @@
 "use client";
 import { useEffect, useState } from "react";
+import dayjs from "dayjs";
 
 const Countdown = () => {
-  const [days, setDays] = useState<string | number>(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [timeRemaining, setTimeRemaining] = useState<{
+    days: string | number;
+    hours: string;
+    minutes: string;
+    seconds: string;
+  }>({
+    days: 0,
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
 
   const inputDate = "10:30 12 Jan 2024";
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const changingDate: any = new Date(inputDate);
-      const currentDate: any = new Date();
-      const totalSeconds = (changingDate - currentDate) / 1000;
-      setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
-      setHours(Math.floor(totalSeconds / 3600) % 24);
-      setMinutes(Math.floor(totalSeconds / 60) % 60);
-      setSeconds(Math.floor(totalSeconds % 60));
+      const changingDate = dayjs(inputDate);
+      const currentDate = dayjs();
+      const durationInMilliseconds = changingDate.diff(currentDate);
+
+      const days = Math.floor(durationInMilliseconds / (24 * 60 * 60 * 1000));
+      const hours = formatTime(Math.floor((durationInMilliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)));
+      const minutes = formatTime(Math.floor((durationInMilliseconds % (60 * 60 * 1000)) / (60 * 1000)));
+      const seconds = formatTime(Math.floor((durationInMilliseconds % (60 * 1000)) / 1000));
+
+      setTimeRemaining({ days, hours, minutes, seconds });
     }, 1000);
 
     // Clear the interval when the component is unmounted
     return () => clearInterval(intervalId);
   }, []);
 
-  const formatTime = (time: number) => {
-    return time < 10 ? `0${time}` : time;
-  };
+  const formatTime = (time: number): string => (time < 10 ? `0${time}` : `${time}`);
 
   const countdown = [
     {
       format: "Ngày",
-      value: days,
+      value: timeRemaining.days,
     },
     {
       format: "Giờ",
-      value: hours,
+      value: timeRemaining.hours,
     },
     {
       format: "Phút",
-      value: minutes,
+      value: timeRemaining.minutes,
     },
     {
       format: "Giây",
-      value: seconds,
+      value: timeRemaining.seconds,
     },
   ];
 
@@ -65,7 +74,7 @@ const Countdown = () => {
   ];
 
   return (
-    <section className="w-full h-auto py-16 bg-countdown bg-no-repeat">
+    <section className="w-full h-auto py-16 bg-countdown bg-repeat">
       <div className="container mx-auto flex flex-col justify-center items-center text-black">
         <h4 className="font-imperialScript text-4xl md:text-5xl tracking-wider">Save The Date</h4>
         <div className="text-lg mt-2">For the wedding of</div>
@@ -84,9 +93,9 @@ const Countdown = () => {
             </div>
           ))}
         </div>
-        <div className="w-full flex flex-col justify-center gap-10 md:flex-row relative text-center">
-          <div className="w-28 h-auto absolute md:top-0 left-1/2 -translate-x-1/2">
-            <img className="" src="/images/effects/love-countdown.png" alt="love" />
+        <div className="w-full flex flex-col justify-center gap-10 md:flex-row relative text-center mt-4">
+          <div className="w-36 h-auto absolute md:top-0 left-1/2 -translate-x-1/2">
+            <img src="/images/effects/love-countdown.png" alt="love" />
           </div>
           {info.map((item) => (
             <div key={item.type} className="w-full md:w-1/2">

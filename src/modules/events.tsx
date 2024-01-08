@@ -19,7 +19,7 @@ const Events = () => {
       hour: "Vào hồi 10 giờ 30 phút",
       date: "Thứ Sáu, ngày 12 tháng 01 năm 2024",
       lunarDate: "Tức ngày 02 tháng 12 năm Quý Mão",
-      addressType: "Tư Gia Nhà Trai",
+      addressType: "Tư Gia Nhà Gái",
       address: "Khối phố Tòng Chu - Thị Trấn Bình Gia - Huyện Bình Gia - Tỉnh Lạng Sơn",
       mapHref: mapAddress.thuy,
     },
