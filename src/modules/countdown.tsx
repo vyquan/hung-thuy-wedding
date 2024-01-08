@@ -4,15 +4,15 @@ import dayjs from "dayjs";
 
 const Countdown = () => {
   const [timeRemaining, setTimeRemaining] = useState<{
-    days: string | number;
-    hours: string;
-    minutes: string;
-    seconds: string;
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
   }>({
     days: 0,
-    hours: "00",
-    minutes: "00",
-    seconds: "00",
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   });
 
   const inputDate = "10:30 12 Jan 2024";
@@ -24,9 +24,9 @@ const Countdown = () => {
       const durationInMilliseconds = changingDate.diff(currentDate);
 
       const days = Math.floor(durationInMilliseconds / (24 * 60 * 60 * 1000));
-      const hours = formatTime(Math.floor((durationInMilliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)));
-      const minutes = formatTime(Math.floor((durationInMilliseconds % (60 * 60 * 1000)) / (60 * 1000)));
-      const seconds = formatTime(Math.floor((durationInMilliseconds % (60 * 1000)) / 1000));
+      const hours = Math.floor((durationInMilliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+      const minutes = Math.floor((durationInMilliseconds % (60 * 60 * 1000)) / (60 * 1000));
+      const seconds = Math.floor((durationInMilliseconds % (60 * 1000)) / 1000);
 
       setTimeRemaining({ days, hours, minutes, seconds });
     }, 1000);
@@ -35,24 +35,22 @@ const Countdown = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const formatTime = (time: number): string => (time < 10 ? `0${time}` : `${time}`);
-
   const countdown = [
     {
       format: "Ngày",
-      value: timeRemaining.days,
+      value: timeRemaining.days || 0,
     },
     {
       format: "Giờ",
-      value: timeRemaining.hours,
+      value: timeRemaining.hours || 0,
     },
     {
       format: "Phút",
-      value: timeRemaining.minutes,
+      value: timeRemaining.minutes || 0,
     },
     {
       format: "Giây",
-      value: timeRemaining.seconds,
+      value: timeRemaining.seconds || 0,
     },
   ];
 
@@ -81,7 +79,7 @@ const Countdown = () => {
         <h1 className="my-4 font-imperialScript text-4xl md:text-5xl tracking-wider text-red-love">
           Ngọc Hưng ❤️ Hoàng Thuỳ
         </h1>
-        <p className="my-1">Thứ Sáu, Ngày 12 Tháng 1 Năm 2024</p>
+        <p className="my-1">Thứ Sáu, Ngày 12 Tháng 01 Năm 2024</p>
         <div className="flex item-center my-4 space-x-4">
           {countdown.map((time) => (
             <div
