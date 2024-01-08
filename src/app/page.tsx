@@ -72,7 +72,7 @@ export default function Home() {
         </button>
       </div>
       <Banner />
-      <Countdown />s
+      <Countdown />
       <Stories />
       <Events />
       {/* <Form /> */}
