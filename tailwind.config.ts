@@ -14,11 +14,13 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         banner: "url('/images/hungthuy/ht-banner-crop_optimized.jpg')",
         countdown: "url('/images/effects/bg-countdown.jpg')",
+        flower: "url('/images/effects/wedding-flower-list-who-gets-flowers_1100x.webp')",
       },
       fontFamily: {
         parfumerieScriptPro: ["var(--font-parfumerieScriptPro)"],
         questrial: ["var(--font-questrial)"],
         dancingScript: ["var(--font-dancingScript)"],
+        imperialScript: ["var(--font-imperialScript)"],
       },
       colors: {
         "red-love": "#df4759",

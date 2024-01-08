@@ -1,5 +1,3 @@
-import { Button, Image } from "antd";
-
 const Album = () => {
   const images = [
     "/images/hungthuy/HIE_0003=60x90-min.jpg",
@@ -20,7 +18,7 @@ const Album = () => {
   ];
   return (
     <section className="w-full h-auto container mx-auto text-black text-center py-8">
-      <h4 className="font-parfumerieScriptPro text-4xl md:text-6xl tracking-wider">Album Ảnh Cưới</h4>
+      <h4 className="font-imperialScript text-4xl md:text-5xl tracking-wider">Album Ảnh Cưới</h4>
       <p className="my-4">
         Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí.
       </p>
