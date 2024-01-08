@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <main className="w-screen h-screen bg-white overflow-x-hidden font-questrial text-black">
-      <div className="fixed bottom-10 left-2">
+      <div className="fixed bottom-10 left-2 z-50">
         <audio controls ref={audioRef} className="sr-only" loop autoPlay>
           <source src="/audio/Beautiful-In-White-Shayne-Ward-Shayne-Ward.mp3" type="audio/mpeg" />
         </audio>

@@ -42,7 +42,7 @@ const QrCode = () => {
                   <img className="w-40 h-40" src={info.avatarUrl} alt={info.type} />
                 </div>
                 <div className="mt-4">
-                  <div>CHÚ RỂ</div>
+                  <div>{info.type}</div>
                   <div>{info.name}</div>
                   <div>STK: {info.bankCode}</div>
                   <div>{info.bankName}</div>
