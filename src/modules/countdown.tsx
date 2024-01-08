@@ -7,7 +7,7 @@ const Countdown = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const inputDate = "12 Jan 2024";
+  const inputDate = "10:30 12 Jan 2024";
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -58,8 +58,8 @@ const Countdown = () => {
     {
       type: "Nhà Gái",
       name: "Hoàng Thị Thuỳ",
-      fatherInLaw: "Hoàng Văn A",
-      motherInLaw: "....",
+      fatherInLaw: "Hoàng Kim Kiều",
+      motherInLaw: "Hoàng Thị Hường",
       address: "Thị Trấn Bình Gia, Bình Gia",
     },
   ];
@@ -67,9 +67,9 @@ const Countdown = () => {
   return (
     <section className="w-full h-auto py-16 bg-countdown bg-no-repeat">
       <div className="container mx-auto flex flex-col justify-center items-center text-black">
-        <h4 className="font-parfumerieScriptPro text-4xl md:text-6xl tracking-wider">Save The Date</h4>
+        <h4 className="font-imperialScript text-4xl md:text-5xl tracking-wider">Save The Date</h4>
         <div className="text-lg mt-2">For the wedding of</div>
-        <h1 className="my-4 font-parfumerieScriptPro text-4xl md:text-6xl tracking-wider text-red-love">
+        <h1 className="my-4 font-imperialScript text-4xl md:text-5xl tracking-wider text-red-love">
           Ngọc Hưng ❤️ Hoàng Thuỳ
         </h1>
         <p className="my-1">Thứ Sáu, Ngày 12 Tháng 1 Năm 2024</p>
@@ -90,7 +90,7 @@ const Countdown = () => {
           </div>
           {info.map((item) => (
             <div key={item.type} className="w-full md:w-1/2">
-              <div className="font-parfumerieScriptPro text-3xl md:text-4xl tracking-wider">{item.type}</div>
+              <div className="font-imperialScript text-3xl md:text-4xl tracking-wider">{item.type}</div>
               <div>
                 <strong>{item.type === "Nhà Trai" ? "Chú Rể" : "Cô Dâu"}: </strong>
                 <span>{item.name}</span>

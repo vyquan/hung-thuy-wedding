@@ -1,3 +1,4 @@
+import { mapAddress } from "@/helpers/constants";
 import Link from "next/link";
 
 const Events = () => {
@@ -10,7 +11,7 @@ const Events = () => {
       lunarDate: "Tức ngày 02 tháng 12 năm Quý Mão",
       addressType: "Tư Gia Nhà Trai",
       address: "Thôn Nà Pái - Xã Tân Văn - Huyện Bình Gia - Tỉnh Lạng Sơn",
-      mapHref: "",
+      mapHref: mapAddress.hung,
     },
     {
       title: "TIỆC CƯỚI NHÀ GÁI",
@@ -20,12 +21,12 @@ const Events = () => {
       lunarDate: "Tức ngày 02 tháng 12 năm Quý Mão",
       addressType: "Tư Gia Nhà Trai",
       address: "Khối phố Tòng Chu - Thị Trấn Bình Gia - Huyện Bình Gia - Tỉnh Lạng Sơn",
-      mapHref: "",
+      mapHref: mapAddress.thuy,
     },
   ];
   return (
     <section className="w-full h-auto container mx-auto px-4">
-      <h4 className="text-center font-parfumerieScriptPro text-4xl md:text-6xl tracking-wider">Sự kiện cưới</h4>
+      <h4 className="text-center font-imperialScript text-4xl md:text-5xl tracking-wider">Sự kiện cưới</h4>
       <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mt-8">
         {events.map((event) => (
           <div
@@ -81,6 +82,7 @@ const Events = () => {
             <div className="mb-2">
               <Link
                 href={event.mapHref}
+                target="_blank"
                 className="rounded-md bg-[#7a9c59] text-white text-sm flex items-center space-x-1 px-3 py-1"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
