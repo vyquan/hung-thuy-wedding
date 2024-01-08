@@ -1,8 +1,8 @@
-import Image from "next/image";
+import { linkTo } from "@/helpers/constants";
 
 const Stories = () => {
   return (
-    <section className="w-full h-auto container mx-auto py-16">
+    <section className="w-full h-auto container mx-auto py-16" id={linkTo.stories}>
       <div className="flex flex-col justify-center items-center text-black">
         <h4 className="text-center font-imperialScript text-4xl md:text-5xl tracking-wider">Cô Dâu & Chú Rể</h4>
         <p className="text-center w-full lg:w-3/6 my-4">

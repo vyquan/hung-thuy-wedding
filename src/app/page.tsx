@@ -55,7 +55,7 @@ export default function Home() {
         <audio controls ref={audioRef} className="sr-only" loop autoPlay>
           <source src="/audio/Beautiful-In-White-Shayne-Ward-Shayne-Ward.mp3" type="audio/mpeg" />
         </audio>
-        <button className="p-2 bg-red-500 rounded-full" onClick={togglePlayPause}>
+        <button className="p-1.5 bg-red-500 rounded-full" onClick={togglePlayPause}>
           {isPlaying ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none">
               <rect x="6" y="5" width="4" height="14" rx="1" fill="#ffffff" />
