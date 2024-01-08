@@ -22,7 +22,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
@@ -184,4 +186,15 @@ body {
   to {
     transform: translateY(101vh);
   }
+}
+
+.menu-item:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px black;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.menu-item:hover:after {
+  transform: scaleX(1);
 }

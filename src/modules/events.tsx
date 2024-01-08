@@ -1,4 +1,4 @@
-import { mapAddress } from "@/helpers/constants";
+import { linkTo, mapAddress } from "@/helpers/constants";
 import Link from "next/link";
 
 const Events = () => {
@@ -25,7 +25,7 @@ const Events = () => {
     },
   ];
   return (
-    <section className="w-full h-auto container mx-auto px-4">
+    <section className="w-full h-auto container mx-auto px-4" id={linkTo.event}>
       <h4 className="text-center font-imperialScript text-4xl md:text-5xl tracking-wider">Sự kiện cưới</h4>
       <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mt-8">
         {events.map((event) => (

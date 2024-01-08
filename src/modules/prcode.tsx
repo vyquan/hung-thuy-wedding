@@ -1,3 +1,4 @@
+import { linkTo } from "@/helpers/constants";
 import Image from "next/image";
 
 const QrCode = () => {
@@ -22,7 +23,7 @@ const QrCode = () => {
     },
   ];
   return (
-    <section className="w-full h-auto container mx-auto py-8">
+    <section className="w-full h-auto container mx-auto py-8" id={linkTo.qrcode}>
       <div className="text-center flex flex-col items-center">
         <h4 className="text-center font-imperialScript text-4xl md:text-5xl tracking-wider">
           Gửi lời chúc đến Cô Dâu & Chú Rể
