@@ -1,38 +1,32 @@
-"use client";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
 const Countdown = () => {
-  const [timeRemaining, setTimeRemaining] = useState<{
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-  }>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const targetDate = new Date("2024-01-12T10:30:00").getTime();
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
-  const inputDate = "10:30 12 Jan 2024";
+  function calculateTimeRemaining() {
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return {
+      days,
+      hours,
+      minutes,
+      seconds,
+    };
+  }
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const changingDate = dayjs(inputDate);
-      const currentDate = dayjs();
-      const durationInMilliseconds = changingDate.diff(currentDate);
-
-      const days = Math.floor(durationInMilliseconds / (24 * 60 * 60 * 1000));
-      const hours = Math.floor((durationInMilliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-      const minutes = Math.floor((durationInMilliseconds % (60 * 60 * 1000)) / (60 * 1000));
-      const seconds = Math.floor((durationInMilliseconds % (60 * 1000)) / 1000);
-
-      setTimeRemaining({ days, hours, minutes, seconds });
+    const interval = setInterval(() => {
+      setTimeRemaining(calculateTimeRemaining());
     }, 1000);
 
-    // Clear the interval when the component is unmounted
-    return () => clearInterval(intervalId);
+    return () => clearInterval(interval);
   }, []);
 
   const countdown = [
